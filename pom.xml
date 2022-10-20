@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>br.com.zup.edu</groupId>
 	<artifactId>paws-pets</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>paws-pets</name>
 	<description>Projeto de um pet shop para o bootcamp Java</description>
 	<properties>
