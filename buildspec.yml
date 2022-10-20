@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Nada para executar na fase de instalação
+  pre_build:
+    commands:
+      - echo Nada para executar em pre_build
+  build:
+    commands:
+      - echo Build iniciado em 'date
+      - mvn install
+  post_build:
+    commands:
+      - echo Build finalizado em 'date
+  artifacts:
+    files:
+      - 'target/*.jar'
