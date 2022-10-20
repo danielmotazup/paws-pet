@@ -6,14 +6,15 @@ phases:
       java: corretto17
   pre_build:
     commands:
-      - echo Nothing to do in the pre_build phase...
+      - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/i2c7a5l2
   build:
     commands:
-      - echo Build started on `date`
       - mvn install
+      - docker build -t paws-pet-daniel .
+      - docker tag paws-pet-daniel:latest public.ecr.aws/i2c7a5l2/paws-pet-daniel:latest
   post_build:
     commands:
-      - echo Build completed on `date`
+      - docker push public.ecr.aws/i2c7a5l2/paws-pet-daniel:latest
 artifacts:
   files:
     - target/*jar
