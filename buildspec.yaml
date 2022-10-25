@@ -11,11 +11,11 @@ phases:
   build:
     commands:
       - mvn install
-      - docker build -t paws-pet-daniel .
-      - docker tag paws-pet-daniel:latest public.ecr.aws/i2c7a5l2/paws-pet-daniel:latest
+      - docker build -t daniel-pawspet .
+      - docker tag daniel-pawspet:latest public.ecr.aws/i2c7a5l2/daniel-pawspet:latest
   post_build:
     commands:
-      - docker push public.ecr.aws/i2c7a5l2/paws-pet-daniel:latest
+      - docker push public.ecr.aws/i2c7a5l2/daniel-pawspet:latest
 artifacts:
   files:
     - target/*jar
