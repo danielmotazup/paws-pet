@@ -11,15 +11,15 @@ phases:
   build:
     commands:
       - mvn install
-      - docker build -t daniel-pawspet .
-      - docker save daniel-pawspet | gzip > daniel-pawspet.tar.gz
-      - docker tag daniel-pawspet:latest public.ecr.aws/i2c7a5l2/daniel-pawspet:latest
+      - docker build -t pawspet .
+      - docker save pawspet | gzip > pawspet.zip
+      - docker tag pawspet:latest public.ecr.aws/i2c7a5l2/pawspet:latest
   post_build:
     commands:
-      - docker push public.ecr.aws/i2c7a5l2/daniel-pawspet:latest
+      - docker push public.ecr.aws/i2c7a5l2/pawspet:latest
 artifacts:
   files:
     - 'target/*jar'
     - 'scripts/**/*'
-    - 'daniel-pawspet.tar.gz'
+    - 'pawspet.tar.gz'
     - 'appspect.yaml'
